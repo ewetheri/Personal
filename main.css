@@ -1,0 +1,128 @@
+@font-face {
+    font-family: chosenfont;
+    src: url("resources/Merriweather-Regular.ttf");
+}
+
+@keyframes cloudshift {
+    from {left:-120px;}
+    to {left:100%;}
+}
+
+@keyframes sunmoveX {
+    from {left:-150px;}
+    to {left:100%;}
+}
+
+@keyframes sunmoveY {
+    0%   {top:75%;}
+    10%  {top:50%;}
+    20%  {top:30%;}
+    30%  {top:15%;}
+    40%  {top:5%;}
+    50%  {top:0%;}
+    60%  {top:5%;}
+    70%  {top:15%;}
+    80%  {top:30%;}
+    90%  {top:50%;}
+    100% {top:75%;}
+}
+
+* {
+    padding: 0px;
+    border: none;
+    margin: 0px;
+    text-decoration: none;
+    font-family: chosenfont;
+    text-align:center;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #BBDDFF;
+    overflow:hidden;
+}
+
+.hills {
+    background-image: url(resources/hills.png);
+    background-repeat:repeat-x;
+    background-position:bottom left;
+    background-size: contain;
+    height:300px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    opacity: .6;
+    z-index: -1;
+    min-width: 800px;
+}
+
+#sun {
+    background-image:url("resources/sunny.gif");
+    background-size: 100% 100%;
+    height: 150px;
+    width: 150px;
+    animation: sunmoveX 60s linear 0s infinite, sunmoveY 60s linear 0s infinite;
+    left: -150px; top: 75%;
+    display: inline;
+    position: absolute;
+}
+
+.cloud {
+    left: -120px;
+    background-image:url("resources/light.png");
+    background-size: 100% 100%;
+    height: 100px;
+    width: 120px;
+    display: inline;
+    position: absolute;
+    animation:cloudshift 4s linear 0s infinite;
+}
+
+.wrapper {
+    margin-left:-5px;
+    height: 150px;
+    width: 500px;
+    position: fixed;
+    bottom: 50px;
+    background-color: #555555;
+    color:#FFFFFF;
+    opacity:.75;
+}
+
+.wrapper div {
+    opacity: .75;
+    background-color: #555555;
+    margin: 5px;
+    padding: 5px;
+}
+
+.wrapper > div:hover {
+    opacity: 1;
+    background-color: #333333;
+}
+
+.content {
+    height: 130px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+.content table {
+    padding:5px;
+    width:100%;
+}
+
+.content td {
+    width: 115px;
+}
+
+#weather {
+    margin-left: 40px;
+    width: 25px;
+    height: 25px;
+    background-image:url(resources/sunny.gif);
+    background-size: 100% 100%;
+    background-position: center;
+}
